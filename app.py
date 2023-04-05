@@ -1,7 +1,7 @@
 from flask import Flask
 import threading
 from changeFunctions import *
-from tempChecking import checkingLoop as loop
+from loops import *
 
 
 app = Flask(__name__)
@@ -18,8 +18,8 @@ def DayTemp(temp):
 def NightTemp(temp):
     changeNightTemp(temp)
 
-tempLoop = threading.Thread(target=loop)
+tempLoop = threading.Thread(target=tempLoop)
 tempLoop.start() 
 
 if __name__ == '__main__':
-    app.run()
+   app.run()
